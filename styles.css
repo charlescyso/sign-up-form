@@ -9,6 +9,7 @@
     --accent: #596D48;
     --accent-hover: #6A7C5A;
     --accent-active: #506241;
+    --card-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 *,
@@ -73,12 +74,22 @@ div.right-side {
     background: var(--right-side-background-color);
 }
 
-.right-side h1 {
+.right-side > .header {
+    padding: 5% 10%;
+}
+
+.right-side > .header h1 {
     font-weight: 400;
+}
+
+.right-side > .header h1:not(:first-of-type) {
+    padding-top: 1em;
 }
 
 .right-side > form {
     background: var(--form-background);
+    padding: 5% 10%;
+    box-shadow: var(--card-box-shadow);
 }
 
 .right-side > form > fieldset {
@@ -88,12 +99,11 @@ div.right-side {
 .right-side > form legend {
     font-size: 1.5em;
     width: 80%;
-    margin: 0 auto;
 }
 
 .right-side > form div {
     width: 80%;
-    margin: 0 auto;
+    margin-top: 1em;
 }
 
 .right-side > form input,
@@ -103,13 +113,15 @@ div.right-side {
 }
 
 .right-side > form label {
-    color: rgb(48, 48, 48);
+    color: rgb(96, 96, 96);
 }
 
 .right-side > form input {
     -webkit-appearance: none;
     appearance: none;
-    font-size: 2em;
+    font-size: 1em;
+    line-height: 2em;
+    padding: 0 .5em;
     border: 1px solid #E5E7EB;
     border-radius: .1em;
 }
@@ -123,11 +135,6 @@ div.right-side {
     border: 1px solid #ff0000;
 }
 
-.right-side > form input:invalid:focus {
-    outline: 1px solid #90ADFF;
-    border: 1px solid #ff0000;
-}
-
 .right-side button {
     background-color: var(--accent);
     color: #FFFFFF;
@@ -137,6 +144,8 @@ div.right-side {
     font-weight: 700;
     font-size: 1em;
     cursor: pointer;
+    margin: 2em 10%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .right-side button:hover {
@@ -150,6 +159,7 @@ div.right-side {
 .right-side > h2 {
     height: 100vh;
     font-weight: 400;
+    margin-left: 10%;
 }
 
 .right-side a {
@@ -183,6 +193,7 @@ div.right-side {
 
     div.right-side {
         min-width: 60%;
+        padding-top: clamp(5rem, 10vh, 10rem);
     }
 
     .right-side form > fieldset {
