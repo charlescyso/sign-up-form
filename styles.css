@@ -6,6 +6,9 @@
 :root {
     --right-side-background-color: #f4f4f4;
     --form-background: #ffffff;
+    --accent: #596D48;
+    --accent-hover: #6A7C5A;
+    --accent-active: #506241;
 }
 
 *,
@@ -111,23 +114,55 @@ div.right-side {
     border-radius: .1em;
 }
 
+.right-side > form input:focus {
+    border: 1px solid #90ADFF;
+    outline: 1px solid #90ADFF;
+}
+
+.right-side > form input:invalid {
+    border: 1px solid #ff0000;
+}
+
+.right-side > form input:invalid:focus {
+    outline: 1px solid #90ADFF;
+    border: 1px solid #ff0000;
+}
+
 .right-side button {
-    background-color: #596D48;
+    background-color: var(--accent);
     color: #FFFFFF;
     padding: 1em 3em;
     border-radius: .5em;
     border: 0;
     font-weight: 700;
     font-size: 1em;
+    cursor: pointer;
+}
+
+.right-side button:hover {
+    background-color: var(--accent-hover);
+}
+
+.right-side button:active {
+    background-color: var(--accent-active);
 }
 
 .right-side > h2 {
     height: 100vh;
     font-weight: 400;
-    
-    a {
-        color: #596D48;
-    }
+}
+
+.right-side a {
+    text-decoration: none;
+    color: var(--accent);
+}
+
+.right-side a:hover {
+    color: var(--accent-hover);
+}
+
+.right-side a:active {
+    color: var(--accent-active);
 }
 
 @media (min-width: 40em) {
@@ -148,5 +183,10 @@ div.right-side {
 
     div.right-side {
         min-width: 60%;
+    }
+
+    .right-side form > fieldset {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 }
