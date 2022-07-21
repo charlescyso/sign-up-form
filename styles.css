@@ -136,6 +136,7 @@ div.right-side {
 }
 
 .right-side button {
+    flex-grow: 0;
     background-color: var(--accent);
     color: #FFFFFF;
     padding: 1em 3em;
@@ -157,7 +158,6 @@ div.right-side {
 }
 
 .right-side > h2 {
-    height: 100vh;
     font-weight: 400;
     margin-left: 10%;
 }
@@ -193,7 +193,9 @@ div.right-side {
 
     div.right-side {
         min-width: 60%;
-        padding-top: clamp(5rem, 10vh, 10rem);
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
     }
 
     .right-side form > fieldset {
