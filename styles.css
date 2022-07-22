@@ -28,6 +28,8 @@ body {
     font-weight: 400;
 }
 
+/* TOP / LEFT SIDE */
+
 div.left-side {
     background-image: url("https://unsplash.com/photos/Z5ruwLaWlOE/download");
     background-size: cover;
@@ -69,6 +71,8 @@ div.left-side {
 .left-side > footer > a {
     color: white;
 }
+
+/* BOTTOM / RIGHT SIDE */
 
 div.right-side {
     background: var(--right-side-background-color);
@@ -126,17 +130,51 @@ div.right-side {
     border-radius: .1em;
 }
 
+.right-side > form input + span {
+    position: relative;
+}
+
+.right-side > form input + span::after {
+    position: absolute;
+    right: -340px;
+    top: -28px;
+}
+
 .right-side > form input:focus {
     border: 1px solid #90ADFF;
     outline: 1px solid #90ADFF;
 }
 
-.right-side > form input:invalid {
+.right-side > form input:not(:focus):not(:placeholder-shown):invalid {
     border: 1px solid #ff0000;
 }
 
+.right-side > form input:not(:focus):not(:placeholder-shown):invalid + span::after {
+    content: '✖';
+    font-weight: bold;
+    color: red;
+}
+
+.right-side > form input:not(:focus):not(:placeholder-shown):valid {
+    border: 1px solid #008000;
+}
+
+.right-side > form input:not(:focus):not(:placeholder-shown):valid + span::after {
+    content: '✓';
+    font-weight: bold;
+    color: green;
+}
+
+.right-side > form input ~ p {
+    display: none;
+    color: #ff0000;
+}
+
+.right-side > form input:not(:focus):not(:placeholder-shown):invalid ~ p{
+    display: block; 
+}
+
 .right-side button {
-    flex-grow: 0;
     background-color: var(--accent);
     color: #FFFFFF;
     padding: 1em 3em;
@@ -160,6 +198,7 @@ div.right-side {
 .right-side > h2 {
     font-weight: 400;
     margin-left: 10%;
+    padding-bottom: 5%;
 }
 
 .right-side a {
@@ -201,5 +240,9 @@ div.right-side {
     .right-side form > fieldset {
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .right-side button {
+        max-width: 211.594px;
     }
 }

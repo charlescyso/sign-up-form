@@ -29,27 +29,39 @@
                     <legend>Let's do this!</legend>
                     <div>
                         <label for="fname">FIRST NAME</label>
-                        <input type="text" name="user_fname" id="fname" required>
+                        <input type="text" name="user_fname" id="fname" placeholder=" " required>
+                        <span></span>
+                        <p>Please enter a valid name</p>
                     </div>
                     <div>
                         <label for="lname">LAST NAME</label>
-                        <input type="text" name="user_lname" id="lname" required>
+                        <input type="text" name="user_lname" id="lname" placeholder=" ">
+                        <span></span>
+                        <p>Please enter a valid last name</p>
                     </div>
                     <div>
                         <label for="email">EMAIL</label>
-                        <input type="email" name="user_email" id="email" required>
+                        <input type="email" name="user_email" id="email" placeholder=" " required>
+                        <span></span>
+                        <p>Please enter a valid email address</p>
                     </div>
                     <div>
                         <label for="tel">PHONE NUMBER</label>
-                        <input type="tel" name="user_tel" id="tel" required>
+                        <input type="tel" name="user_tel" id="tel" pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$" placeholder=" ">
+                        <span></span>
+                        <p>Please enter a valid phone number</p>
                     </div>
                     <div>
                         <label for="pass">PASSWORD</label>
-                        <input type="password" name="user_pass" id="pass" required>
+                        <input type="password" name="user_pass" id="pass" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder=" " required>
+                        <span></span>
+                        <p>Please enter a valid password (At least 8 characters long containing at least one uppercase, one lowercase, and one number or special character)</p>
                     </div>
                     <div>
                         <label for="confirmpass">CONFIRM PASSWORD</label>
-                        <input type="password" name="user_confirmpass" id="confirmpass">
+                        <input type="password" name="user_confirmpass" id="confirmpass" placeholder=" " required>
+                        <span></span>
+                        <p>Password does not match</p>
                     </div>
                 </fieldset>
             </form>
